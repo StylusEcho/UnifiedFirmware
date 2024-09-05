@@ -3,10 +3,10 @@
  * NO IMPLIED SUPPORT OR WARRANTY IS PROVIDED WITH THIS FIRMWARE AND IS PROVIDED AS-IS
  */
 #pragma once
-#define CONFIGURATION_H_VERSION 02010200
+#define CONFIGURATION_H_VERSION 02010204
 
-#define UNIFIED_VERSION "TH3D UFW 2.88"
-#define STRING_DISTRIBUTION_DATE "2024-07-23"
+#define UNIFIED_VERSION "TH3D UFW 2.90"
+#define STRING_DISTRIBUTION_DATE "2024-09-04"
 
 //#@CONFIGURATION_START_FLAG
 
@@ -147,10 +147,10 @@
 #define EZABL_PROBE_EDGE 15
 
 // Fast Probing - Works with most machines and all EZABL sensors (8mm/s)
-#define EZABL_FASTPROBE
+//#define EZABL_FASTPROBE
 
 // Superfast Probing - Only works with the EZABL Pro Sensors (15mm/s)
-//#define EZABL_SUPERFASTPROBE
+#define EZABL_SUPERFASTPROBE
 
 // Heaters on During Probing - Heaters will stay on during probing - May reduce accuracy do not use unless told to by support
 //#define HEATERS_ON_DURING_PROBING
@@ -221,23 +221,24 @@
 // If you reversed the wiring on your E motor already (like the Bondtech Guide says to do) then you do not need to reverse it in the firmware here.
 //
 // Example EStep Values For Common Extuders: 
-// TH3D Aluminum Extruder ---  95 ESteps
-// LGX/LGX Lite/NG Extruder - 400 ESteps
-// TH3D Tough Extruder V2 --- 407 ESteps
-// TH3D Tough Extruder V1 --- 410 ESteps
-// Bondtech BMG Extruder ---- 415 ESteps
-// Creality Sprite Extruder - 425 ESteps
-// LDO Orbiter/Sherpa Mini -- 690 ESteps
+// TH3D Aluminum Extruder ------  95 ESteps
+// Micro Swiss DD Extruder ----- 130 ESteps
+// LGX/LGX Lite/MS NG Extruder - 400 ESteps
+// TH3D Tough Extruder V2 ------ 407 ESteps
+// TH3D Tough Extruder V1 ------ 410 ESteps
+// Bondtech BMG Extruder ------- 415 ESteps
+// Creality Sprite Extruder ---- 425 ESteps
+// LDO Orbiter/Sherpa Mini ----- 690 ESteps
 //
 // If you want to change the Esteps for your printer you can uncomment the below line and set CUSTOM_ESTEPS_VALUE to what you want - USE WHOLE NUMBERS ONLY
 // This option sets the esteps from the CUSTOM_ESTEPS_VALUE line below.
 // If you need to reverse the e motor direction also enabled the REVERSE_E_MOTOR_DIRECTION option.
-//#define CUSTOM_ESTEPS
-#define CUSTOM_ESTEPS_VALUE 410
+#define CUSTOM_ESTEPS
+#define CUSTOM_ESTEPS_VALUE 406 // TriangleLabs BMG
 //#define REVERSE_E_MOTOR_DIRECTION
 
 // If you are using a pancake stepper enable the PANCAKE_STEPPER option to reduce the motor current to lower the stepper temperature
-//#define PANCAKE_STEPPER
+#define PANCAKE_STEPPER
 
 // FILAMENT SENSOR UNLOAD SETTINGS -----------------
 // If you have a filament sensor that is physically mounted to the machine you can enable MOUNTED_FILAMENT_SENSOR to set the unload length to 5mm to prevent filament from backing up in the sensor by uncommenting MOUNTED_FILAMENT_SENSOR 
@@ -289,8 +290,8 @@
 //#define FAN_FIX
 
 // Use your own printer name - Uncomment both lines
-//#define CUSTOM_PRINTER_NAME
-//#define USER_PRINTER_NAME "CHANGE ME"
+#define CUSTOM_PRINTER_NAME
+#define USER_PRINTER_NAME "Ender 3"
 
 // If your printer is homing to the endstops hard uncomment this to change the homing speed/divisor to make it less aggressive.
 //#define SLOWER_HOMING
@@ -388,7 +389,7 @@
  * 
  * Change the K Value with the LINEAR_ADVANCE_K line below or use M900 KX.XX in your starting code (recommended).
  */
-//#define LINEAR_ADVANCE
+#define LINEAR_ADVANCE
 #define LINEAR_ADVANCE_K 0
 
 /**
@@ -517,7 +518,7 @@
 
   #define SERIAL_PORT -1
   #define SERIAL_PORT_2 0
-  #define BAUDRATE 115200
+  #define BAUDRATE 250000
   
   #if ENABLED(CR20) || ENABLED(ENDER2)
     #define MKS_MINI_12864
