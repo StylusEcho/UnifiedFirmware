@@ -36,7 +36,7 @@
 // Ender Series -------------------------------------------------------------
 //#define ENDER2
 //#define ENDER2_PRO     //Requires Motor Adapter Cable from TH3D due to stock connections using 5 pins
-//#define ENDER3
+#define ENDER3
 //#define ENDER3_PRO
 //#define ENDER3_MAX
 //#define ENDER5
@@ -74,7 +74,7 @@
 //#define TM3DAERO_EXTENDED        //TM3D Arto Mount for Volcano
 //#define PETSFANG                 //This is the RIGHT mounted version
 //#define SPRITE_EXTRUDER_18MM_MOUNT // Mounts to the stock CRTouch bracket
-//#define CUSTOM_PROBE             //For any other probe mount (also used for BL Touch), Enter offsets below
+#define CUSTOM_PROBE             //For any other probe mount (also used for BL Touch), Enter offsets below
 
 // Ender 5 Plus ONLY ABL Settings -------------------------------------------
 // By default the Ender 5 Plus comes with a BL Touch. Enabling the ENDER5_PLUS_EZABL or ENDER5_PLUS_NOABL will override the BL Touch setting
@@ -208,7 +208,7 @@
   * If the probe is left of the nozzle the offset on X is NEGATIVE
   * If the probe is in front of the nozzle the offset on Y is NEGATIVE
   */
-  #define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
+  #define NOZZLE_TO_PROBE_OFFSET { -44, -1, 0 }
 #endif
 
 
